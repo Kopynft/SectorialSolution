@@ -1,0 +1,49 @@
+<h1 mat-dialog-title> {{ titleAction }} </h1>
+<div mat-dialog-content>
+    <form [formGroup]="formSubcategory">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput formControlName="id" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="name" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Activa</mat-label>
+                    <input matInput
+                    formControlName="active" placeholder="1: Activado | 0: Desactivado"
+                    autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field appearance="outline">
+                  <mat-label>Categoría</mat-label>
+                  <input matInput
+                  formControlName="categoriesid"
+                  autocomplete="off">
+                </mat-form-field>
+          </mat-grid-tile>
+          </mat-grid-list>
+          
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color = "warn">Close</button>
+  <button
+  mat-raised-button
+  color = "primary"
+  (click)="addeditSubcategory()"
+  [disabled] = "formSubcategory.invalid">
+    {{botonAction}}
+</button>
+</div>
